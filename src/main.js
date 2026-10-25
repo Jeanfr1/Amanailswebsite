@@ -284,6 +284,7 @@ addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) set
 phoneMQ.addEventListener('change', () => { if (!phoneMQ.matches) setMenu(false); });
 
 // ---------- dialogs ----------
+// TODO(amanails): service texts come from the kit; owner to confirm the wording
 const SERVICES = {
   manicure: ['Maniküre', 'Besprich deine gewünschte Form, Länge und Farbe direkt mit Amanails. Gemeinsam finden wir den Look, der zu deiner Idee passt.'],
   pedicure: ['Pediküre', 'Ein Moment für gepflegte Füße. Frag bei Amanails nach den Möglichkeiten und einem passenden Termin.'],
