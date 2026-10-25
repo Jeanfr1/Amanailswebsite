@@ -6,3 +6,5 @@ qa/
 assets-src/
 # third-party style screenshots and the Instagram profile capture stay local
 references/*.png
+higgsfield/referencias/
+higgsfield/entregas/

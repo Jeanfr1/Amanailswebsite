@@ -79,12 +79,6 @@
         </picture>
       </div>
 
-      <!-- the rosé line leaves the brush; drawn in plate coordinates (registers with object-fit: cover) -->
-      <div class="hero-cam hero-cam--line" data-cam aria-hidden="true">
-        <svg class="stroke hero-stroke hero-stroke--d" viewBox="0 0 1672 941" preserveAspectRatio="xMidYMid slice"><path pathLength="1"/><path pathLength="1"/><path pathLength="1"/></svg>
-        <svg class="stroke hero-stroke hero-stroke--m" viewBox="0 0 1122 1402" preserveAspectRatio="xMidYMid slice"><path pathLength="1"/><path pathLength="1"/><path pathLength="1"/></svg>
-      </div>
-
       <p class="hero-note"><span class="rule" aria-hidden="true"></span>Mehr als<br>Nägel.<br>Ein Gefühl.</p>
     </div>
   </section>
@@ -92,18 +86,20 @@
   <!-- 02 · Von der Idee zum Detail. -->
   <section id="detail" class="scene detail" aria-labelledby="detail-title">
     <div class="scene-media" data-depth="detail">
-      <picture>
-        <source type="image/avif" srcset="/img/macro-v1-960.avif 960w, /img/macro-v1-1440.avif 1440w, /img/macro-v1-1672.avif 1672w" sizes="100vw">
-        <img src="/img/macro-v1-1440.webp" srcset="/img/macro-v1-960.webp 960w, /img/macro-v1-1440.webp 1440w, /img/macro-v1-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="Mandelförmige Nude-Nägel mit feinem Schimmer auf roséfarbenem Satin" loading="lazy" decoding="async">
-      </picture>
+      <img class="ambient" src="/img/macro-v1-960.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
+      <div class="frame frame--detail">
+        <picture>
+          <source type="image/avif" srcset="/img/macro-v1-960.avif 960w, /img/macro-v1-1440.avif 1440w, /img/macro-v1-1672.avif 1672w" sizes="100vw">
+          <img src="/img/macro-v1-1440.webp" srcset="/img/macro-v1-960.webp 960w, /img/macro-v1-1440.webp 1440w, /img/macro-v1-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="Mandelförmige Nude-Nägel mit feinem Schimmer auf roséfarbenem Satin" loading="lazy" decoding="async">
+        </picture>
+      </div>
     </div>
     <div class="scene-shade" aria-hidden="true"></div>
-    <svg class="edge" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1"/></svg>
     <div class="detail-copy">
-      <p class="num" data-split><span>02</span></p>
-      <span class="rule" aria-hidden="true"></span>
-      <h2 id="detail-title" class="display" data-lines><span class="line"><span>Von der Idee</span></span> <span class="line"><span>zum Detail.</span></span></h2>
-      <p class="caps" data-track>Feine Handarbeit<br>für deinen<br>einzigartigen Stil.</p>
+      <p class="num" data-reveal><span>02</span></p>
+      <span class="rule" data-reveal aria-hidden="true"></span>
+      <h2 id="detail-title" class="display" data-reveal="lines"><span class="line"><span>Von der Idee</span></span> <span class="line"><span>zum Detail.</span></span></h2>
+      <p class="caps" data-reveal>Feine Handarbeit<br>für deinen<br>einzigartigen Stil.</p>
     </div>
   </section>
 
@@ -111,40 +107,43 @@
   <!-- TODO(amanails): owner confirms permission to publish the work and studio photos -->
   <section id="arbeiten" class="scene work" aria-labelledby="work-title">
     <div class="scene-media" data-depth="work">
-      <picture>
-        <source type="image/avif" srcset="/img/work-v1-640.avif 640w, /img/work-v1-960.avif 960w, /img/work-v1-1344.avif 1344w" sizes="100vw">
-        <img src="/img/work-v1-960.webp" srcset="/img/work-v1-640.webp 640w, /img/work-v1-960.webp 960w, /img/work-v1-1344.webp 1344w" sizes="100vw" width="1344" height="1598" alt="Lange Mandelnägel in Nude, zwei davon mit Silberglitzer, Arbeit von Amanails" loading="lazy" decoding="async">
-      </picture>
+      <img class="ambient" src="/img/work-v1-640.webp" width="640" height="761" alt="" loading="lazy" decoding="async">
+      <div class="frame frame--work">
+        <picture>
+          <source type="image/avif" srcset="/img/work-v1-640.avif 640w, /img/work-v1-960.avif 960w, /img/work-v1-1344.avif 1344w" sizes="(max-width: 900px) 135vw, 76vw">
+          <img src="/img/work-v1-960.webp" srcset="/img/work-v1-640.webp 640w, /img/work-v1-960.webp 960w, /img/work-v1-1344.webp 1344w" sizes="(max-width: 900px) 135vw, 76vw" width="1344" height="1598" alt="Lange Mandelnägel in Nude, zwei davon mit Silberglitzer, Arbeit von Amanails" loading="lazy" decoding="async">
+        </picture>
+      </div>
     </div>
     <div class="scene-shade" aria-hidden="true"></div>
-    <svg class="edge" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1"/></svg>
     <div class="work-copy">
-      <p class="num"><span>03</span></p>
-      <span class="rule" aria-hidden="true"></span>
-      <h2 id="work-title" class="display display--s" data-lines><span class="line"><span>Nägel mit</span></span> <span class="line"><span>Charakter.</span></span></h2>
-      <div class="work-links">
+      <p class="num" data-reveal><span>03</span></p>
+      <span class="rule" data-reveal aria-hidden="true"></span>
+      <h2 id="work-title" class="display display--s" data-reveal="lines"><span class="line"><span>Nägel mit</span></span> <span class="line"><span>Charakter.</span></span></h2>
+      <div class="work-links" data-reveal>
         <a class="text-link" href="https://www.instagram.com/amanails.d/" target="_blank" rel="noopener">Mehr Looks auf Instagram <span aria-hidden="true">↗</span></a>
         <button class="text-link" type="button" data-dialog="photo">Ganzes Foto ansehen <span aria-hidden="true">↗</span></button>
       </div>
     </div>
-    <p class="dein" aria-hidden="true"><span>D</span><span>E</span><span>I</span><span>N</span><span>.</span></p>
+    <p class="dein" data-reveal="letters" aria-hidden="true"><span>D</span><span>E</span><span>I</span><span>N</span><span>.</span></p>
     <div class="scene-media scene-media--fg" data-depth="work" aria-hidden="true">
-      <picture>
-        <source type="image/avif" srcset="/img/work-fg-v1-640.avif 640w, /img/work-fg-v1-960.avif 960w, /img/work-fg-v1-1344.avif 1344w" sizes="100vw">
-        <img src="/img/work-fg-v1-960.webp" srcset="/img/work-fg-v1-640.webp 640w, /img/work-fg-v1-960.webp 960w, /img/work-fg-v1-1344.webp 1344w" sizes="100vw" width="1344" height="1598" alt="" loading="lazy" decoding="async">
-      </picture>
+      <div class="frame frame--work">
+        <picture>
+          <source type="image/avif" srcset="/img/work-fg-v1-640.avif 640w, /img/work-fg-v1-960.avif 960w, /img/work-fg-v1-1344.avif 1344w" sizes="(max-width: 900px) 135vw, 76vw">
+          <img src="/img/work-fg-v1-960.webp" srcset="/img/work-fg-v1-640.webp 640w, /img/work-fg-v1-960.webp 960w, /img/work-fg-v1-1344.webp 1344w" sizes="(max-width: 900px) 135vw, 76vw" width="1344" height="1598" alt="" loading="lazy" decoding="async">
+        </picture>
+      </div>
     </div>
   </section>
 
   <!-- 04 · Für dich. The only solid section (#BFA398). -->
   <section id="leistungen" class="services" aria-labelledby="services-title">
-    <svg class="edge" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1"/></svg>
     <div class="services-mark" aria-hidden="true"><img src="/img/logo-line-v1-1100.webp" srcset="/img/logo-line-v1-700.webp 700w, /img/logo-line-v1-1100.webp 1100w" sizes="(max-width: 900px) 110vw, 50vw" width="1100" height="1121" alt="" loading="lazy" decoding="async"></div>
     <div class="services-copy">
-      <p class="num"><span>04</span></p>
-      <span class="rule" aria-hidden="true"></span>
-      <h2 id="services-title" class="display display--xl" data-letters>Für dich.</h2>
-      <ul class="service-list">
+      <p class="num" data-reveal><span>04</span></p>
+      <span class="rule" data-reveal aria-hidden="true"></span>
+      <h2 id="services-title" class="display display--xl" data-reveal="lines"><span class="line"><span>Für dich.</span></span></h2>
+      <ul class="service-list" data-reveal="list">
         <li><button type="button" data-service="manicure"><span class="service-name">Maniküre</span><span class="service-line" aria-hidden="true"></span></button></li>
         <li><button type="button" data-service="pedicure"><span class="service-name">Pediküre</span><span class="service-line" aria-hidden="true"></span></button></li>
         <li><button type="button" data-service="design"><span class="service-name">Nageldesign</span><span class="service-line" aria-hidden="true"></span></button></li>
@@ -155,19 +154,21 @@
   <!-- 05 · Dein Moment bei Amanails. Contact and footer on the studio photo. -->
   <section id="studio" class="scene studio" aria-labelledby="studio-title">
     <div class="scene-media" data-depth="studio">
-      <picture>
-        <source type="image/avif" srcset="/img/studio-v1-560.avif 560w, /img/studio-v1-766.avif 766w" sizes="100vw">
-        <img src="/img/studio-v1-766.webp" srcset="/img/studio-v1-560.webp 560w, /img/studio-v1-766.webp 766w" sizes="100vw" width="766" height="926" alt="Das Amanails-Studio in Hamburg mit pinkem Neon-Schriftzug am Empfangstresen" loading="lazy" decoding="async">
-      </picture>
+      <img class="ambient" src="/img/studio-v1-560.webp" width="560" height="677" alt="" loading="lazy" decoding="async">
+      <div class="frame frame--studio">
+        <picture>
+          <source type="image/avif" srcset="/img/studio-v1-560.avif 560w, /img/studio-v1-766.avif 766w" sizes="(max-width: 900px) 100vw, 60vw">
+          <img src="/img/studio-v1-766.webp" srcset="/img/studio-v1-560.webp 560w, /img/studio-v1-766.webp 766w" sizes="(max-width: 900px) 100vw, 60vw" width="766" height="926" alt="Das Amanails-Studio in Hamburg mit pinkem Neon-Schriftzug am Empfangstresen" loading="lazy" decoding="async">
+        </picture>
+      </div>
     </div>
     <div class="scene-shade" aria-hidden="true"></div>
-    <svg class="edge" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1"/></svg>
-    <p class="num studio-num"><span>05</span></p>
-    <span class="rule studio-rule" aria-hidden="true"></span>
+    <p class="num studio-num" data-reveal><span>05</span></p>
+    <span class="rule studio-rule" data-reveal aria-hidden="true"></span>
     <div class="studio-copy">
-      <h2 id="studio-title" class="display display--m" data-lines><span class="line"><span>Dein Moment</span></span> <span class="line"><span>bei Amanails.</span></span></h2>
-      <a class="place" href="https://maps.app.goo.gl/dQKtftZLRgPTJKW1A" target="_blank" rel="noopener"><svg viewBox="0 0 12 16" aria-hidden="true"><path d="M6 15.2S1 9.6 1 6a5 5 0 0 1 10 0c0 3.6-5 9.2-5 9.2Z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="6" r="1.8" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Hamburg<span class="sr-only"> (Anfahrt in Google Maps)</span></a>
-      <button class="cta" type="button" data-dialog="booking"><span class="pill pill--fill">Termin anfragen</span><span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 12"><path d="M0 6h22M17 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></button>
+      <h2 id="studio-title" class="display display--m" data-reveal="lines"><span class="line"><span>Dein Moment</span></span> <span class="line"><span>bei Amanails.</span></span></h2>
+      <a class="place" data-reveal href="https://maps.app.goo.gl/dQKtftZLRgPTJKW1A" target="_blank" rel="noopener"><svg viewBox="0 0 12 16" aria-hidden="true"><path d="M6 15.2S1 9.6 1 6a5 5 0 0 1 10 0c0 3.6-5 9.2-5 9.2Z" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="6" cy="6" r="1.8" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Hamburg<span class="sr-only"> (Anfahrt in Google Maps)</span></a>
+      <button class="cta" data-reveal type="button" data-dialog="booking"><span class="pill pill--fill">Termin anfragen</span><span class="cta-arrow" aria-hidden="true"><svg viewBox="0 0 24 12"><path d="M0 6h22M17 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></button>
     </div>
 
     <footer class="footer">
@@ -187,8 +188,6 @@
     </footer>
   </section>
 
-  <!-- one rosé ribbon across scenes 02-05, drawn as you scroll -->
-  <svg class="stroke ribbon" aria-hidden="true"><path pathLength="1"/><path pathLength="1"/><path pathLength="1"/></svg>
 </main>
 
 <nav id="menu" class="menu" aria-label="Menü" hidden>
@@ -202,9 +201,6 @@
 
 <svg class="defs" aria-hidden="true" focusable="false" width="0" height="0">
   <defs>
-    <linearGradient id="lacquer" x1="0" y1="0" x2="1" y2=".25">
-      <stop offset="0" stop-color="#b9806c"/><stop offset=".42" stop-color="#f0c8b4"/><stop offset=".7" stop-color="#d49a86"/><stop offset="1" stop-color="#f3d6c6"/>
-    </linearGradient>
     <clipPath id="clip-detail" clipPathUnits="objectBoundingBox"><path d="M0 0.1406C0.0263 0.137 0.114 0.1317 0.1579 0.1188C0.2018 0.1059 0.2281 0.0785 0.2632 0.0634C0.2982 0.0482 0.3333 0.0363 0.3684 0.0277C0.4035 0.0191 0.4386 0.0089 0.4737 0.0119C0.5088 0.0149 0.5439 0.034 0.5789 0.0455C0.614 0.0571 0.6491 0.0739 0.6842 0.0812C0.7193 0.0884 0.7544 0.0881 0.7895 0.0891C0.8246 0.0901 0.8596 0.0931 0.8947 0.0871C0.9298 0.0812 0.9825 0.0591 1 0.0535V1H0Z"/></clipPath>
     <clipPath id="clip-work" clipPathUnits="objectBoundingBox"><path d="M0 0.03C0.0263 0.0277 0.114 0.0197 0.1579 0.016C0.2018 0.0123 0.2193 0.0037 0.2632 0.008C0.307 0.0123 0.3772 0.0313 0.4211 0.042C0.4649 0.0527 0.4912 0.0623 0.5263 0.072C0.5614 0.0817 0.5877 0.091 0.6316 0.1C0.6754 0.109 0.7456 0.1213 0.7895 0.126C0.8333 0.1307 0.8596 0.1287 0.8947 0.128C0.9298 0.1273 0.9825 0.123 1 0.122V1H0Z"/></clipPath>
     <clipPath id="clip-services" clipPathUnits="objectBoundingBox"><path d="M0 0.0297C0.0439 0.0297 0.2018 0.0293 0.2632 0.0297C0.3246 0.0302 0.3333 0.0293 0.3684 0.0324C0.4035 0.0356 0.4386 0.0383 0.4737 0.0486C0.5088 0.059 0.5439 0.0851 0.5789 0.0946C0.614 0.1041 0.6491 0.1068 0.6842 0.1054C0.7193 0.1041 0.7544 0.0946 0.7895 0.0865C0.8246 0.0784 0.8596 0.0658 0.8947 0.0568C0.9298 0.0477 0.9825 0.0365 1 0.0324V1H0Z"/></clipPath>

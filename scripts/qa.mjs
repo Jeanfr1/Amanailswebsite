@@ -36,17 +36,20 @@ const sectionTop = (page, sel) => page.evaluate((s) => Math.round(document.query
   check('desktop: services colour #BFA398', (await page.$eval('#leistungen', (x) => getComputedStyle(x).backgroundColor)) === 'rgb(191, 163, 152)');
   check('desktop: no horizontal overflow', await page.evaluate(() => document.documentElement.scrollWidth === innerWidth));
   check('desktop: title visible after intro', await page.$eval('.hero-title .line > span', (x) => getComputedStyle(x).transform === 'none' || getComputedStyle(x).transform === 'matrix(1, 0, 0, 1, 0, 0)'));
-  const lineDrawn = await page.$eval('.hero-stroke--d path:nth-child(2)', (p) => parseFloat(getComputedStyle(p).strokeDashoffset));
-  check('desktop: opening line drawn from the brush', lineDrawn < .01, String(lineDrawn));
-
-  // the line starts at the bristle tip
-  const tip = await page.evaluate(() => {
-    const p = document.querySelector('.hero-stroke--d path:nth-child(2)');
-    const pt = p.getPointAtLength(0); const m = p.getScreenCTM();
-    return [pt.x * m.a + m.e, pt.y * m.d + m.f];
-  });
-  const plateTip = await page.evaluate(() => { const s = Math.max(innerWidth / 1672, innerHeight / 941); return [1188 * s - (1672 * s - innerWidth) / 2, 652 * s - (941 * s - innerHeight) / 2]; });
-  check('desktop: line origin on the brush tip (±3px)', Math.hypot(tip[0] - plateTip[0], tip[1] - plateTip[1]) < 3, `${tip.map(Math.round)} vs ${plateTip.map(Math.round)}`);
+  // photos at the board's scale (rendered px per source px vs the board's, ±15%), and no zoom on top
+  const scales = await page.evaluate(() => Object.fromEntries([['detail', '.frame--detail img', 1672, .861], ['work', '.frame--work img', 1344, .81], ['studio', '.frame--studio img', 766, 1.12]]
+    .map(([k, sel, nat, want]) => [k, +(document.querySelector(sel).getBoundingClientRect().width / nat / want).toFixed(2)])));
+  check('desktop: photos at the board scale (±15%)', Object.values(scales).every((r) => r > .85 && r < 1.15), JSON.stringify(scales));
+  let maxScale = 1;
+  for (const yy of [0, 300, 600, 1200, 1800, 2400, 3000]) {
+    await page.evaluate((v) => scrollTo({ top: v, behavior: 'instant' }), yy);
+    await page.waitForTimeout(250);
+    maxScale = Math.max(maxScale, await page.evaluate(() => Math.max(...[...document.querySelectorAll('.scene-media, [data-cam], .frame')].map((el) => new DOMMatrix(getComputedStyle(el).transform).a))));
+  }
+  check('desktop: no zoom on photos while scrolling (scale ≤ 1.0)', maxScale <= 1.001, String(maxScale));
+  check('desktop: no vector line left on the page', (await page.$$('.stroke, .ribbon, .edge')).length === 0);
+  await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
+  await page.waitForTimeout(300);
 
   // nav anchor
   await page.click('.masthead-nav a[href="#leistungen"]');
@@ -89,6 +92,12 @@ const sectionTop = (page, sel) => page.evaluate((s) => Math.round(document.query
   const h = (b) => createHash('sha256').update(b).digest('hex');
   check('desktop: full photo = original file bytes', h(served) === h(original));
   await page.keyboard.press('Escape');
+
+  // every entrance has finished once its scene was on screen
+  for (const sel of ['#detail', '#arbeiten', '#leistungen', '#studio']) { await scrollToY(page, await page.evaluate((s) => document.querySelector(s).getBoundingClientRect().top + scrollY, sel), { settle: 400 }); }
+  await page.waitForTimeout(1800);
+  const pending = await page.evaluate(() => [...document.querySelectorAll('[data-reveal]')].filter((el) => !el.classList.contains('in')).map((el) => el.className || el.tagName));
+  check('desktop: all entrances completed after a pass', pending.length === 0, pending.join(', '));
 
   // pause button
   await page.click('.motion-toggle');
@@ -133,7 +142,7 @@ for (const vp of [{ width: 390, height: 844 }, { width: 360, height: 740 }]) {
 {
   const { ctx, page } = await open({ width: 1280, height: 800 }, { reducedMotion: 'reduce' });
   check('reduced motion: motion-off, pause button disabled', await page.evaluate(() => document.documentElement.classList.contains('motion-off') && document.querySelector('.motion-toggle').disabled));
-  check('reduced motion: lines fully drawn, copy visible', await page.evaluate(() => getComputedStyle(document.querySelector('.ribbon path:nth-child(2)')).strokeDashoffset === '0px' || getComputedStyle(document.querySelector('.ribbon path:nth-child(2)')).strokeDashoffset === '0'));
+  check('reduced motion: every entrance shown at once', await page.evaluate(() => [...document.querySelectorAll('[data-reveal]')].every((el) => getComputedStyle(el).opacity === '1')));
   await ctx.close();
 }
 

@@ -20,7 +20,7 @@ const stops = await page.evaluate(() => {
   return [0, Math.round(pin * .5), pin, top('#detail') - 40, top('#arbeiten') - innerHeight * .15, top('#arbeiten') + 40, top('#leistungen') - innerHeight * .2, top('#leistungen') - 20, top('#studio') - innerHeight * .2, top('#studio'), document.documentElement.scrollHeight - innerHeight];
 });
 for (const [i, y] of stops.entries()) {
-  await scrollToY(page, Math.max(0, Math.round(y)));
+  await scrollToY(page, Math.max(0, Math.round(y)), { settle: 2000 });
   await page.screenshot({ path: `qa/shots/${label}-${String(i).padStart(2, '0')}.png` });
 }
 const overflow = await page.evaluate(() => [document.documentElement.scrollWidth, innerWidth]);
