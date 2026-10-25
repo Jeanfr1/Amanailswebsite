@@ -1,0 +1,23 @@
+{
+  "name": "amanails-hamburg",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Amanails Hamburg: one-page site, approved model 2 \"Gesto\".",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4317 --strictPort",
+    "prepare-images": "~/anaconda3/bin/python3 scripts/prepare-images.py",
+    "images": "node scripts/images.mjs",
+    "measure": "~/anaconda3/bin/python3 scripts/measure-board.py",
+    "qa": "node scripts/qa.mjs",
+    "compare": "node scripts/compare.mjs",
+    "check-kit": "~/anaconda3/bin/python3 tools/check_kit.py"
+  },
+  "devDependencies": {
+    "playwright": "1.49.1",
+    "sharp": "0.33.5",
+    "vite": "6.0.11"
+  }
+}

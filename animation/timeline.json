@@ -1,0 +1,52 @@
+{
+  "model": 2,
+  "name": "Gesto",
+  "mode": "scroll-driven",
+  "hero": {
+    "desktop_svh": 165,
+    "mobile_svh": 140,
+    "scale_desktop": [
+      1,
+      1.11
+    ],
+    "scale_mobile": [
+      1,
+      1.065
+    ],
+    "title_fade_progress": [
+      0.48,
+      0.93
+    ],
+    "camera_origin": "78% 69%"
+  },
+  "macro_parallax_percent": [
+    3.4,
+    -3.4
+  ],
+  "original_parallax_percent": [
+    2,
+    -2
+  ],
+  "portfolio_word_x_percent": [
+    -1.2,
+    1.2
+  ],
+  "logo_rotation_degrees": [
+    3,
+    -3
+  ],
+  "line": "one editable SVG path; dashed progress follows scroll",
+  "accessibility": [
+    "pause control",
+    "prefers-reduced-motion",
+    "native dialogs",
+    "keyboard focus return"
+  ],
+  "animatic": {
+    "duration": 25.6,
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "kind": "edited conceptual sequence; not browser recording"
+  }
+}

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#4b2d18">
+<meta name="description" content="Amanails Hamburg. Maniküre, Pediküre und individuelles Nageldesign. Entdecke unsere Arbeiten und frage deinen Termin an.">
+<title>Amanails Hamburg — Eine Linie. Dein Stil.</title>
+<link rel="icon" href="assets/logo.png" type="image/png">
+<link rel="preload" href="assets/hero.webp" as="image" media="(min-width:761px)">
+<link rel="preload" href="assets/hero-mobile.webp" as="image" media="(max-width:760px)">
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#leistungen">Zum Inhalt</a>
+<header class="navigation">
+ <a class="brand" href="#start" aria-label="Amanails — nach oben"><span class="brand-symbol"><img src="assets/logo.png" alt="" width="1254" height="1254"></span><span>AMANAILS</span></a>
+ <nav class="desktop-nav" aria-label="Hauptnavigation"><a href="#leistungen">Leistungen</a><a href="#arbeiten">Arbeiten</a><a href="#studio">Studio</a></nav>
+ <div class="nav-actions"><button class="motion-button" aria-pressed="false" aria-label="Animation pausieren" title="Animation pausieren"><span aria-hidden="true">Ⅱ</span></button><button class="button button-outline nav-book" data-dialog="booking">Termin anfragen <span aria-hidden="true">↗</span></button><button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false"><span aria-hidden="true">☰</span><span class="sr-only">Menü öffnen</span></button></div>
+ <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile Navigation" hidden><a href="#leistungen">Leistungen</a><a href="#arbeiten">Arbeiten</a><a href="#studio">Studio</a><button class="button" data-dialog="booking">Termin anfragen ↗</button></nav>
+</header>
+<svg class="contour-defs" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"><defs>
+ <clipPath id="contour-detail" clipPathUnits="objectBoundingBox"><path d="M0 .08 C.16 .10 .22 0 .37 0 S.70 .16 1 .04 V1 H0 Z"/></clipPath>
+ <clipPath id="contour-work" clipPathUnits="objectBoundingBox"><path d="M0 0 C.20 .10 .35 .08 .50 .03 S.80 0 1 .05 V1 H0 Z"/></clipPath>
+ <clipPath id="contour-services" clipPathUnits="objectBoundingBox"><path d="M0 .04 C.22 0 .38 .12 .65 .08 S.90 .015 1 0 V1 H0 Z"/></clipPath>
+ <clipPath id="contour-studio" clipPathUnits="objectBoundingBox"><path d="M0 .06 C.22 0 .40 0 .65 .08 S.90 .10 1 .07 V1 H0 Z"/></clipPath>
+</defs></svg>
+<main id="journey">
+ <!-- APPROVED: new model 2 / GESTO. Four photographic scenes + one blush interval. -->
+ <section id="start" class="hero" data-background="image" aria-labelledby="hero-title">
+  <div class="hero-stage">
+   <div class="hero-camera hero-base"><picture><source media="(max-width:760px)" srcset="assets/hero-mobile.webp"><img src="assets/hero.webp" width="1672" height="941" alt="Ein feiner Pinsel berührt einen glänzenden Nude-Nagel auf einer dunklen Arbeitsfläche — KI-generiertes Kampagnenmotiv" fetchpriority="high"></picture></div>
+   <div class="hero-shade"></div>
+   <div class="hero-copy"><p class="eyebrow hero-intro">Amanails · Hamburg</p><h1 id="hero-title"><span class="title-line"><span>Eine Linie.</span></span><span class="title-line"><span>Dein Stil.</span></span></h1></div>
+   <div class="hero-camera hero-foreground" aria-hidden="true"><picture><source media="(max-width:760px)" srcset="assets/hero-mobile.webp"><img src="assets/hero.webp" width="1672" height="941" alt=""></picture></div>
+   <div class="hero-note hero-intro">Mehr als Nägel.<br>Ein Gefühl.</div>
+   <div class="hero-bottom"><a class="scroll-link" href="#detail"><span>Entdecke Amanails</span><span aria-hidden="true">↓</span></a><span class="photo-label">Kampagnenmotiv · Inspiration</span></div>
+  </div>
+ </section>
+
+ <section id="detail" class="detail scene" data-background="image" aria-labelledby="detail-title">
+  <div class="scene-camera"><img class="detail-photo" src="assets/macro.webp" width="1672" height="941" alt="Nude-Nägel im Makro auf roséfarbenem Satin — KI-generiertes Inspirationsmotiv" loading="eager"></div>
+  <div class="scene-shade detail-shade"></div>
+  <div class="detail-copy scene-copy"><p class="eyebrow reveal">02 / Der feine Unterschied</p><h2 id="detail-title" class="reveal">Von der Idee<br><em>zum Detail.</em></h2><p class="spaced-copy reveal">Feine Handarbeit.<br>Für deinen<br>einzigartigen Stil.</p><a class="text-link reveal" href="#arbeiten">Unsere Arbeiten entdecken <span aria-hidden="true">↘</span></a></div>
+  <span class="photo-label">Kampagnenmotiv · Inspiration</span>
+ </section>
+
+ <section id="arbeiten" class="work scene" data-background="image" aria-labelledby="work-title">
+  <div class="scene-camera work-base"><img src="assets/work-original.png" width="1344" height="1598" alt="Originalarbeit von Amanails: lange Nude-Nägel mit silbernen Glitzerakzenten und violetten Ärmeln" loading="lazy"></div>
+  <div class="scene-shade work-shade"></div>
+  <div class="work-copy"><p class="eyebrow reveal">03 / Arbeiten von Amanails</p><h2 id="work-title" class="reveal">Nägel mit<br><em>Charakter.</em></h2></div>
+  <p class="work-word" aria-hidden="true">DEIN.</p>
+  <div class="scene-camera work-foreground" aria-hidden="true"><img src="assets/work-original.png" width="1344" height="1598" alt="" loading="lazy"></div>
+  <div class="work-actions"><button class="text-link" data-dialog="work-photo">Originalfoto ansehen <span aria-hidden="true">↗</span></button><a class="text-link" href="https://www.instagram.com/amanails.d/" target="_blank" rel="noopener noreferrer">Mehr Looks auf Instagram <span aria-hidden="true">↗</span></a></div>
+  <span class="photo-label">Originalfoto · Amanails</span>
+ </section>
+
+ <!-- THE ONLY SOLID-COLOUR MAIN SECTION; keep it after the original work scene. -->
+ <section id="leistungen" class="services" data-background="color" aria-labelledby="services-title">
+  <img class="services-logo" src="assets/logo.png" width="1254" height="1254" alt="" aria-hidden="true" loading="lazy">
+  <div class="services-content"><p class="eyebrow reveal">04 / Deine Möglichkeiten</p><h2 id="services-title" class="reveal">Für dich.</h2><div class="service-list">
+   <button data-service="manicure"><span class="service-number">01</span><span class="service-name">Maniküre</span><span class="service-arrow" aria-hidden="true">↗</span></button>
+   <button data-service="pedicure"><span class="service-number">02</span><span class="service-name">Pediküre</span><span class="service-arrow" aria-hidden="true">↗</span></button>
+   <button data-service="design"><span class="service-number">03</span><span class="service-name">Nageldesign</span><span class="service-arrow" aria-hidden="true">↗</span></button>
+  </div><p class="services-note reveal">Deine Form. Deine Farbe. Deine Idee.</p></div>
+ </section>
+
+ <section id="studio" class="studio scene" data-background="image" aria-labelledby="studio-title">
+  <div class="scene-camera studio-camera"><img src="assets/studio-original.png" width="766" height="926" alt="Originalfoto des Amanails-Studios: pinker Amanails-Neonschriftzug und weiße Maniküre im Vordergrund" loading="lazy"></div>
+  <div class="scene-shade studio-shade"></div>
+  <div class="studio-copy scene-copy" id="kontakt"><p class="eyebrow reveal">05 / Hamburg</p><h2 id="studio-title" class="reveal">Dein Moment<br><em>bei Amanails.</em></h2><p class="copy reveal">Bring deine Idee mit.<br>Wir freuen uns auf dich.</p><div class="studio-actions reveal"><button class="button" data-dialog="booking">Termin anfragen <span aria-hidden="true">↗</span></button><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Amanails+Wendenstra%C3%9Fe+23-25+Hamburg" target="_blank" rel="noopener noreferrer">Anfahrt ↗</a></div></div>
+  <footer class="footer"><a href="#start" class="footer-brand">AMANAILS</a><div class="footer-nav"><a href="#leistungen">Leistungen</a><a href="#arbeiten">Arbeiten</a><a href="https://www.instagram.com/amanails.d/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><button data-dialog="image-info">Bildhinweise</button></div><div class="footer-address"><span>Wendenstraße 23–25 · 20097 Hamburg</span><a href="tel:+4917660032244">+49 176 60032244 ↗</a><span>Originalfoto · Amanails</span></div></footer>
+ </section>
+
+ <svg class="gesture" aria-hidden="true" focusable="false"><defs><linearGradient id="lacquer" x1="0" y1="0" x2="1" y2=".2" gradientUnits="objectBoundingBox"><stop stop-color="#bd8372"/><stop offset=".43" stop-color="#f1c9b7"/><stop offset=".7" stop-color="#dba18e"/><stop offset="1" stop-color="#f2d4c3"/></linearGradient></defs><path class="gesture-shadow" pathLength="1"/><path class="gesture-body" pathLength="1"/><path class="gesture-light" pathLength="1"/></svg>
+</main>
+<div class="reading-progress" aria-hidden="true"></div>
+<dialog id="booking" aria-labelledby="booking-title"><button class="dialog-close" data-close aria-label="Schließen">×</button><img class="dialog-logo" src="assets/logo.png" width="1254" height="1254" alt="Amanails"><p class="eyebrow">Dein Moment bei Amanails</p><h2 id="booking-title">Was darf es<br><em>für dich sein?</em></h2><p>Schreib uns auf Instagram oder ruf an, um deinen Wunsch-Look und einen passenden Termin abzustimmen.</p><div class="booking-links"><a class="button" href="https://www.instagram.com/amanails.d/" target="_blank" rel="noopener noreferrer">Auf Instagram anfragen ↗</a><a class="text-link" href="tel:+4917660032244">+49 176 60032244 ↗</a></div><address>Wendenstraße 23–25<br>20097 Hamburg</address></dialog>
+<dialog id="service-info" aria-labelledby="service-title"><button class="dialog-close" data-close aria-label="Schließen">×</button><p class="eyebrow">Für dich</p><h2 id="service-title"></h2><p id="service-description"></p><button class="button" data-dialog="booking">Deinen Wunsch besprechen ↗</button></dialog>
+<dialog id="work-photo" class="photo-dialog" aria-label="Originalfoto von Amanails"><button class="dialog-close" data-close aria-label="Schließen">×</button><img src="assets/work-original.png" width="1344" height="1598" alt="Originalfoto der Nude-Nägel mit Silberglitzer von Amanails"><p>Originalfoto · Amanails</p></dialog>
+<dialog id="image-info" aria-labelledby="image-info-title"><button class="dialog-close" data-close aria-label="Schließen">×</button><h2 id="image-info-title">Bildhinweise</h2><p>Das Motiv im Einstieg und die Makroaufnahme im Abschnitt „Von der Idee zum Detail“ sind KI-generierte Kampagnenbilder zur Inspiration. Sie zeigen keine Kundinnen oder Mitarbeiterinnen von Amanails.</p><p>Die Fotos in „Arbeiten von Amanails“ und im Studio-Abschnitt stammen aus dem bereitgestellten Originalmaterial. Die Originaldateien sind unverändert; der Website-Ausschnitt und die grafische Überlagerung passen sich dem Bildschirm an.</p></dialog>
+<noscript><p class="noscript">Termin anfragen: <a href="https://www.instagram.com/amanails.d/">Instagram @amanails.d</a> oder <a href="tel:+4917660032244">+49 176 60032244</a>. Für das vollständige Foto: <a href="assets/work-original.png">Originalarbeit ansehen</a>.</p></noscript>
+</body>
+</html>

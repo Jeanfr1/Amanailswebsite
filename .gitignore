@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+.vercel
+qa/
+assets-src/
+# third-party style screenshots and the Instagram profile capture stay local
+references/*.png

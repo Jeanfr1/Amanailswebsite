@@ -1,0 +1,74 @@
+{
+ "v": 1,
+ "hero": {
+  "width": 1672,
+  "height": 941,
+  "widths": [
+   960,
+   1440,
+   1672
+  ]
+ },
+ "hero-fg": {
+  "width": 1672,
+  "height": 941,
+  "widths": [
+   960,
+   1440,
+   1672
+  ]
+ },
+ "hero-m": {
+  "width": 1122,
+  "height": 1402,
+  "widths": [
+   560,
+   840,
+   1122
+  ]
+ },
+ "hero-m-fg": {
+  "width": 1122,
+  "height": 1402,
+  "widths": [
+   560,
+   840,
+   1122
+  ]
+ },
+ "macro": {
+  "width": 1672,
+  "height": 941,
+  "widths": [
+   960,
+   1440,
+   1672
+  ]
+ },
+ "work": {
+  "width": 1344,
+  "height": 1598,
+  "widths": [
+   640,
+   960,
+   1344
+  ]
+ },
+ "work-fg": {
+  "width": 1344,
+  "height": 1598,
+  "widths": [
+   640,
+   960,
+   1344
+  ]
+ },
+ "studio": {
+  "width": 766,
+  "height": 926,
+  "widths": [
+   560,
+   766
+  ]
+ }
+}

@@ -1,0 +1,3 @@
+# TODO(amanails): allow indexing once the final domain is live
+User-agent: *
+Disallow: /

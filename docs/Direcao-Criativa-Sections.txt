@@ -1,0 +1,75 @@
+DIREÇÃO CRIATIVA — SEÇÕES IMERSIVAS
+Atualizada em 25/10/2026
+Referência de trabalho para Amanails e próximos projetos
+
+PRINCÍPIO CENTRAL
+As imagens devem construir o espaço do site. Texto, produtos, mãos e elementos da marca participam da mesma cena, com perspectiva, profundidade e hierarquia. A intenção das referências não é apenas colocar uma foto atrás de um título: é criar uma composição que continue de uma seção para a seguinte.
+
+REGRAS DE DIREÇÃO
+• Priorizar fotografias ocupando o fundo das seções, com enquadramento planejado para a tipografia.
+• Usar apenas uma seção de cor sólida como pausa e contraste, conforme a preferência atual do cliente. Cabeçalho e rodapé podem permanecer sobre as fotografias.
+• Integrar objetos em primeiro plano, texto parcialmente atrás deles e diferentes distâncias de câmera, mantendo a leitura.
+• Fazer as transições nascerem dos contornos e materiais relevantes para a empresa: mão, tecido, pincel, produto, embalagem ou geometria da logo.
+• Escolher uma lógica espacial própria para cada projeto. Evitar transformar toda transição em uma onda idêntica.
+• Relacionar toda a composição à identidade, às cores, aos produtos e aos serviços reais da empresa.
+• Criar imagens de campanha adicionais quando elas melhorarem a narrativa. Preservar as fotografias documentais originais e distinguir as imagens geradas.
+• Construir hierarquia com escala, luz, enquadramento, contraste e espaço; não com enfeites repetidos.
+• Adaptar enquadramento, leitura e movimento ao celular. Respeitar preferência por movimento reduzido.
+• Não repetir automaticamente os mesmos cards, grids, scrapbook, blocos divididos de texto e foto ou sequência de seções entre empresas.
+
+O QUE AS SEIS NOVAS REFERÊNCIAS ENSINAM
+1. Screenshot 2026-10-25 at 12.16.37.png
+   Fundo fotográfico dominante; transição orgânica entre a imagem e a continuação da página; linguagem visual unificada.
+2. Screenshot 2026-10-25 at 12.16.58.png
+   O contorno do próprio tema determina a área de leitura. Imagem e texto se encaixam numa composição contínua.
+3. Screenshot 2026-10-25 at 12.17.49.png
+   Tipografia monumental integrada à profundidade da cena; primeiro plano sobre parte das letras.
+4. Screenshot 2026-10-25 at 12.18.08.png
+   Percurso visual conduzindo a atenção e ligando diferentes distâncias. O assunto cria a trajetória.
+5. Screenshot 2026-10-25 at 12.18.46.png
+   Enquadramento dentro de enquadramento; mãos como moldura; entrada visual para outro plano.
+6. Screenshot 2026-10-25 at 12.19.03.png
+   Um elemento reconhecível da marca pode funcionar como portal entre cenas e escalas.
+
+Esses princípios são transferíveis. Paisagens, câmeras, logotipos de terceiros, textos e marcas-d’água das referências não devem ser transplantados para empresas sem relação com esses assuntos.
+
+AMANAILS — IDENTIDADE A PRESERVAR
+Hamburg. Serviços confirmados no material fornecido: Maniküre, Pediküre, Nageldesign.
+Idioma público do site: alemão.
+Logo: A serifado, ramo botânico, círculo delicado e nome AMANAILS espaçado.
+Paleta: marrom espresso #4B2D18, blush #BFA398, marfim #F5F0EA e tons naturais de pele.
+O rosa do letreiro aparece nas fotografias reais do estúdio; não substitui a paleta principal.
+Não inventar preços, depoimentos, certificações, horários, profissionais ou interiores.
+
+TRÊS PROPOSTAS — MODELO 2 GESTO APROVADO EM 25/10/2026
+1. RELEVO
+   Composição luminosa e tátil. Mãos, tecido e macro de unha formam os contornos das cenas.
+   Movimento proposto: deslocamento sutil de planos e revelação seguindo o tecido, até a aproximação do detalhe.
+   Estrutura: hero fotográfico → macro/traço → única pausa blush com serviços → trabalhos → contato sobre foto do estúdio.
+
+2. GESTO
+   Composição mais dramática. Um traço de esmalte liga o gesto de desenhar ao resultado; letras monumentais parcialmente encobertas pelas mãos.
+   Movimento proposto: traçado progressivo, aproximação do detalhe e transição acompanhando a linha.
+   Estrutura: hero com pincel → detalhe em escala ampliada → trabalhos com tipografia em profundidade → única pausa blush com serviços → estúdio/contato.
+
+3. PORTAL
+   O círculo e o ramo da logo orientam uma abertura visual para o universo da manicure.
+   Movimento proposto: abertura circular que cresce até revelar a cena seguinte; continuidade por fragmentos do círculo e do ramo.
+   Estrutura: hero com portal → trabalhos → única pausa blush com serviços → gesto artesanal → estúdio/contato.
+
+As três imagens são PRÉVIAS CONCEITUAIS. Os movimentos descritos ainda são propostas, não animações já implementadas. A composição gerada pode reinterpretar as fotos de referência: na produção, a área documental deve utilizar os arquivos originais sem inventar resultados ou reformar digitalmente o estabelecimento.
+
+PIPELINE OBRIGATÓRIO
+1. Analisar conceito, materiais e identidade da empresa.
+2. Apresentar três imagens reais de proposta, mostrando hero e seções.
+3. Esperar a escolha explícita do cliente.
+4. Registrar a combinação exata quando houver hero de um modelo e seções de outro.
+5. Somente depois produzir código, imagens finais, logo, roteiros, README, guia e ZIP.
+6. Conferir o resultado contra a imagem aprovada antes da entrega.
+
+STATUS ATUAL
+Modelo 2 Gesto aprovado pelo cliente em 25/10/2026: "vamos de modelo 2".
+Hero e seções devem seguir esta proposta inteira. O kit está nesta pasta.
+Não misturar o modelo Portal ou o Relevo.
+
+Este arquivo é um registro reutilizável. Não garante memória automática em outras conversas.

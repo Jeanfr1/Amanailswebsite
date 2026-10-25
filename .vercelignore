@@ -1,0 +1,13 @@
+# the design kit stays in the repo but is never deployed
+animation/
+docs/
+images-master/
+originals/
+references/
+roteiros/
+site/
+tools/
+qa/
+assets-src/
+MANIFEST.sha256
+LEIA-ME-KIT.md

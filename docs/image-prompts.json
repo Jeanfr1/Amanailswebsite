@@ -1,0 +1,29 @@
+[
+  {
+    "id": "hero",
+    "prompt": "Use case: photorealistic-natural. Asset type: final website photographic background, for the AMANAILS Hamburg selected GESTO direction. The first input is a FULL WEBSITE CONCEPT REFERENCE ONLY; create a SINGLE photograph, never the whole website, no typography, no website UI, no logo, no border, no letters, NO baked decorative ribbon. Match its real natural skin, warm espresso shadows and nude/blush manicure. The second input shows premium natural nail texture. The photo must look like a first-class real beauty editorial shot, NOT CGI, not glossy plastic fingers. Anatomically plausible, visible tiny skin creases, healthy natural cuticle, warm sidelight, shallow depth. Color palette nude rose, cocoa brown, dusty blush, cream. No green, blue or neon, no giant gold shiny branding, no fake salon interior, no medical tools, no product brand names. Create a WIDE landscape 16:9 photograph. Match the TOP HERO scene of reference1: single almond-shaped glossy nude fingernail in the lower RIGHT quarter, finger extending to the right edge, a slender nail-art brush enters from TOP RIGHT and touches the tip of the nail at approximately x=78%, y=69%. Brush has a real metal ferrule and very fine precise brown bristles. A small open nude gel jar softly blurred at x=65%, y=22%. Whole subject rests on dark textured cocoa manicure towel, warm brown blurred background. The LEFT 55% must remain dark, naturally photographed textile and out-of-focus background with plenty of legible clear space for a large cream title to be added later; the upper 15% also clear enough for navigation. Keep full fingernail, fingertip and brush readable with room at edges. Refined measured light; avoid harsh orange skin, fake rose-gold cords or surreal liquid. Photo only.",
+    "tool": "built-in imagegen",
+    "references": [
+      "docs/modelo-2-aprovado.png",
+      "references/manicure-concept.png"
+    ]
+  },
+  {
+    "id": "macro",
+    "prompt": "Use case: photorealistic-natural. Asset type: final website photographic background, for the AMANAILS Hamburg selected GESTO direction. The first input is a FULL WEBSITE CONCEPT REFERENCE ONLY; create a SINGLE photograph, never the whole website, no typography, no website UI, no logo, no border, no letters, NO baked decorative ribbon. Match its real natural skin, warm espresso shadows and nude/blush manicure. The second input shows premium natural nail texture. The photo must look like a first-class real beauty editorial shot, NOT CGI, not glossy plastic fingers. Anatomically plausible, visible tiny skin creases, healthy natural cuticle, warm sidelight, shallow depth. Color palette nude rose, cocoa brown, dusty blush, cream. No green, blue or neon, no giant gold shiny branding, no fake salon interior, no medical tools, no product brand names. Create a WIDE landscape 16:9 photo matching the SECOND scene of reference1, not its hero. An extreme macro of two or three perfectly real nude almond fingernails on the RIGHT half, fingers resting softly on dusty rose silk with deep natural folds. One fingernail may have extremely subtle champagne shimmer, the others milky blush. Frame nail tips at x=70..90%, y=28..75%. Photographed blush satin and cocoa shadows create rich three-dimensional sweeping fabric on LEFT HALF, which stays mostly uncluttered with naturally dark shading for cream text overlay. Close almost-touchable skin texture but flattering light. Silk folds form a diagonal rising from lower left to upper right, giving organic continuity. Not a product flatlay, not an interior. Photo only.",
+    "tool": "built-in imagegen",
+    "references": [
+      "docs/modelo-2-aprovado.png",
+      "references/manicure-concept.png"
+    ]
+  },
+  {
+    "id": "hero-mobile",
+    "prompt": "Use case: photorealistic-natural. Asset type: final website photographic background, for the AMANAILS Hamburg selected GESTO direction. The first input is a FULL WEBSITE CONCEPT REFERENCE ONLY; create a SINGLE photograph, never the whole website, no typography, no website UI, no logo, no border, no letters, NO baked decorative ribbon. Match its real natural skin, warm espresso shadows and nude/blush manicure. The second input shows premium natural nail texture. The photo must look like a first-class real beauty editorial shot, NOT CGI, not glossy plastic fingers. Anatomically plausible, visible tiny skin creases, healthy natural cuticle, warm sidelight, shallow depth. Color palette nude rose, cocoa brown, dusty blush, cream. No green, blue or neon, no giant gold shiny branding, no fake salon interior, no medical tools, no product brand names. Create a PORTRAIT 4:5 mobile hero photograph that is an alternate crop of the TOP scene of reference1. A single beautiful nude almond fingernail in lower right (x=75%, y=77%), finger entering right edge, fine metal-ferrule nail-art brush entering from upper right and touching nail. Top third and left half are dark softly lit textured brown towel and naturally blurred manicure surface to hold logo and title later. Small soft blurred nude gel jar in middle upper right. Be anatomically plausible, no free-floating brush duplicate. Leave at least 10% breathing room below nail tip. Natural warm editorial light and cocoa shadow. No rendered ribbon or text. Photo only.",
+    "tool": "built-in imagegen",
+    "references": [
+      "docs/modelo-2-aprovado.png",
+      "references/manicure-concept.png"
+    ]
+  }
+]

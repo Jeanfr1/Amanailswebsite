@@ -1,0 +1,75 @@
+[
+  {
+    "path": "site/assets/hero-mask.svg",
+    "sha256": "059ac883eff69fcf19989592c7d7462c6d67f8e1325a31391cc647555328200d",
+    "bytes": 285,
+    "source": "vector-mask"
+  },
+  {
+    "path": "site/assets/hero-mobile-mask.svg",
+    "sha256": "dc48f08c24f148e02bc09e105d1ca149bd566f839166c448bd1d5db640c6232d",
+    "bytes": 284,
+    "source": "vector-mask"
+  },
+  {
+    "path": "site/assets/hero-mobile.webp",
+    "sha256": "2dd3a145994b1f04293132e4906811e01d1a99e65c9bec3f2c56a4c480a910bb",
+    "bytes": 156292,
+    "width": 1122,
+    "height": 1402,
+    "mode": "RGB",
+    "source": "generated-campaign"
+  },
+  {
+    "path": "site/assets/hero.webp",
+    "sha256": "a926ef725c75d3bfa20a37e75300cac1e297d0011136cac5c8f6ff2ca4952f8f",
+    "bytes": 157486,
+    "width": 1672,
+    "height": 941,
+    "mode": "RGB",
+    "source": "generated-campaign"
+  },
+  {
+    "path": "site/assets/logo.png",
+    "sha256": "5e45ab526e95c7e633ac1b3db7414bbda9fb5b3860241147f5de09fdfa1270cd",
+    "bytes": 686429,
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "alpha_zero_fraction": 0.7139,
+    "source": "recreated-logo"
+  },
+  {
+    "path": "site/assets/macro.webp",
+    "sha256": "5ea0638af13130491a981c5097eb4bb2ca6d3fd4b2107b14944b10fa37e87af9",
+    "bytes": 180414,
+    "width": 1672,
+    "height": 941,
+    "mode": "RGB",
+    "source": "generated-campaign"
+  },
+  {
+    "path": "site/assets/studio-original.png",
+    "sha256": "c60cd25b9115ee4e33340c902fb273effc152c9d558d60a5f8b05196c3cf0d91",
+    "bytes": 774999,
+    "width": 766,
+    "height": 926,
+    "mode": "RGBA",
+    "source": "client-original"
+  },
+  {
+    "path": "site/assets/work-mask.svg",
+    "sha256": "b2ffc4ad6ff515299094a05ebd8add63c8c8cfc531759227fa1758974f50afd8",
+    "bytes": 1058,
+    "source": "vector-mask"
+  },
+  {
+    "path": "site/assets/work-original.png",
+    "sha256": "cfde388ff503fb543f1dd713f3196950ea4e721bff2a02a67fb9001d90c09614",
+    "bytes": 2473433,
+    "width": 1344,
+    "height": 1598,
+    "mode": "RGBA",
+    "source": "client-original"
+  }
+]

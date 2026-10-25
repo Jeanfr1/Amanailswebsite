@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-25",
+  "js_syntax": "passed",
+  "html_assets_structure": "passed",
+  "original_photo_bytes": "identical to attachments",
+  "pdf_visual_inspection": "4 pages passed",
+  "video_metadata": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "duration": 25.583333
+  },
+  "video_sample_inspection": "passed",
+  "browser": "unverified: managed preview daemon unavailable",
+  "deployment": "not requested, not performed"
+}

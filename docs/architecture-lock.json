@@ -1,0 +1,52 @@
+{
+  "project": "Amanails Hamburg",
+  "approved_model": 2,
+  "direction": "Gesto",
+  "approval_date": "2026-10-25",
+  "approval_text": "vamos de modelo 2",
+  "visitor_language": "de",
+  "photographic_sections": 4,
+  "solid_sections": 1,
+  "sections": [
+    {
+      "id": "start",
+      "background": "image",
+      "source": "generated",
+      "headline": "Eine Linie. Dein Stil."
+    },
+    {
+      "id": "detail",
+      "background": "image",
+      "source": "generated",
+      "headline": "Von der Idee zum Detail."
+    },
+    {
+      "id": "arbeiten",
+      "background": "image",
+      "source": "original",
+      "headline": "Nägel mit Charakter.",
+      "depth_type": "DEIN."
+    },
+    {
+      "id": "leistungen",
+      "background": "color",
+      "color": "#BFA398",
+      "headline": "Für dich."
+    },
+    {
+      "id": "studio",
+      "background": "image",
+      "source": "original",
+      "headline": "Dein Moment bei Amanails.",
+      "footer": "over same photograph"
+    }
+  ],
+  "forbidden": [
+    "Portal hero",
+    "Relevo hero",
+    "old model 3 body",
+    "additional solid section",
+    "AI replacement of original studio",
+    "fake booking confirmation"
+  ]
+}
