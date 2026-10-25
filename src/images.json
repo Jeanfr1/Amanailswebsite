@@ -1,48 +1,89 @@
 {
- "v": 1,
+ "v": 2,
  "hero": {
-  "width": 1672,
-  "height": 941,
+  "width": 5041,
+  "height": 2160,
   "widths": [
-   960,
    1440,
-   1672
+   2160,
+   2880
   ]
  },
  "hero-fg": {
-  "width": 1672,
-  "height": 941,
+  "width": 3405,
+  "height": 1916,
   "widths": [
-   960,
-   1440,
-   1672
+   1100,
+   1672,
+   2400
   ]
  },
  "hero-m": {
-  "width": 1122,
-  "height": 1402,
+  "width": 2304,
+  "height": 4096,
   "widths": [
-   560,
-   840,
-   1122
+   640,
+   960,
+   1280
   ]
  },
  "hero-m-fg": {
-  "width": 1122,
-  "height": 1402,
+  "width": 2304,
+  "height": 4096,
+  "widths": [
+   640,
+   960,
+   1280
+  ]
+ },
+ "macro": {
+  "width": 2552,
+  "height": 1061,
+  "widths": [
+   1280,
+   1920,
+   2552
+  ]
+ },
+ "macro-m": {
+  "width": 3584,
+  "height": 4800,
   "widths": [
    560,
    840,
    1122
   ]
  },
- "macro": {
-  "width": 1672,
-  "height": 941,
+ "satin-wave": {
+  "width": 6336,
+  "height": 365,
   "widths": [
-   960,
-   1440,
-   1672
+   1400,
+   2400
+  ]
+ },
+ "satin-wave-2": {
+  "width": 6336,
+  "height": 601,
+  "widths": [
+   1400,
+   2400
+  ]
+ },
+ "satin-diagonal": {
+  "width": 5487,
+  "height": 3072,
+  "widths": [
+   1200,
+   2000
+  ]
+ },
+ "satin-vertical": {
+  "width": 2047,
+  "height": 3844,
+  "widths": [
+   600,
+   1000
   ]
  },
  "work": {

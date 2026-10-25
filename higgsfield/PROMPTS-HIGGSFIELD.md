@@ -215,3 +215,20 @@ Coloque tudo em `higgsfield/entregas/` e me avise. Do meu lado:
 4. Monto tudo no branch `v2` e te mando o link de pré-visualização com capturas lado a lado com o board, **antes** de publicar.
 
 **Enquanto isso** eu já faço a parte que não depende do Higgsfield: tiro o zoom, reenquadro as fotos na escala do board, removo a linha vetorial e acalmo as animações.
+
+---
+
+## O que foi gerado (25/10/2026, via conector Higgsfield)
+
+O conector foi autorizado nesta sessão e as peças foram geradas direto daqui (~165 créditos). Arquivos em `higgsfield/entregas/` (fora do git e do deploy); `npm run prepare-higgsfield`, `npm run images` e `npm run film` levam o que foi escolhido para o site.
+
+| Peça | Arquivo usado | Como foi feito | Observação |
+| :-- | :-- | :-- | :-- |
+| Abertura larga (início) | `H1w-hero-largo-v2.png` → `H1w-hero-largo-4k.png` | FLUX.2 Pro Outpaint (+402 px de cada lado, +120 px embaixo) + upscale 4K | Substitui a H1 16:9: o site agora mostra a cena na escala do board, sem zoom, e precisa de cena real além do recorte |
+| Abertura larga (fim, com a fita) | `H2w-hero-final-4k.png` | GPT Image 2.5 (`H2w-hero-final-v3.png`), registrada por SIFT e só a fita transplantada sobre a H1 | Dedo, unha e pincel são pixel a pixel os da H1 |
+| V1 · gesto (desktop) | `V1-hero-desktop.mp4` | MiniMax H3, 21:9, primeiro/último quadro fixos | Cinema Studio 3.0 descartado (reenquadrou a cena) |
+| Celular início / fim | `M1-celular-inicio-4k.png`, `M2-celular-final-4k.png` | Outpaint 9:16 + upscale; fita do GPT Image 2.5 transplantada | |
+| V2 · gesto (celular) | `V2-hero-celular.mp4` (= `-minimax`) | MiniMax H3, 9:16 | Kling 3.0 também ficou bom (`-kling`), reserva |
+| Macro larga | `D1w-macro-larga.png` | Outpaint (+880 px de cetim à esquerda) | Ancorada na borda direita da página |
+| Macro celular | `D2-macro-celular-4k.png` | Nano Banana 2.1, 3:4 | |
+| Fitas | `R5-fita-fina-v3.png` (borda da macro), `R5-fita-fina.png` (borda de "Für dich."), `R2-fita-diagonal-v2.png` (estúdio) | Nano Banana 2.1 sobre preto, convertidas em PNG transparente | R1/R3/R4 ficaram grossas demais e não entram |

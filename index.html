@@ -13,15 +13,18 @@
 <meta property="og:site_name" content="Amanails Hamburg">
 <meta property="og:title" content="Amanails Hamburg · Eine Linie. Dein Stil.">
 <meta property="og:description" content="Maniküre, Pediküre und Nageldesign in Hamburg.">
-<meta property="og:image" content="/og-v1.jpg">
+<meta property="og:image" content="/og-v2.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="/fonts/bodoni-moda-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/manrope-500.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" type="image/avif" media="(min-width: 901px)" imagesrcset="/img/hero-v1-960.avif 960w, /img/hero-v1-1440.avif 1440w, /img/hero-v1-1672.avif 1672w" imagesizes="100vw">
-<link rel="preload" as="image" type="image/avif" media="(max-width: 900px)" imagesrcset="/img/hero-m-v1-560.avif 560w, /img/hero-m-v1-840.avif 840w, /img/hero-m-v1-1122.avif 1122w" imagesizes="100vw">
-<script>document.documentElement.classList.add('js')</script>
+<link rel="preload" as="image" type="image/webp" media="(min-width: 901px)" href="/img/hero-start-v2-2048.webp">
+<link rel="preload" as="image" type="image/webp" media="(max-width: 900px)" href="/img/hero-m-start-v2-720.webp">
+<script>
+// .film: the opening plays the brush film (src/main.js); without it the page shows the still end frame
+(function (d, s) { d.classList.add('js'); try { if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !/[?&]static\b/.test(s) && !(navigator.connection && navigator.connection.saveData)) d.classList.add('film'); } catch (e) {} })(document.documentElement, location.search);
+</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"NailSalon","name":"Amanails","address":{"@type":"PostalAddress","streetAddress":"Wendenstraße 23-25","postalCode":"20097","addressLocality":"Hamburg","addressCountry":"DE"},"telephone":"+49 176 60032244","sameAs":["https://www.instagram.com/amanails.d/"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Maniküre"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Pediküre"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Nageldesign"}}]}
 </script>
@@ -32,7 +35,7 @@
 
 <!-- compact bar: slides in once the opening scene has passed -->
 <div class="bar" aria-hidden="true" inert>
-  <a class="bar-brand" href="#start" aria-label="Amanails, nach oben"><img src="/img/logo-symbol-v1-160.webp" width="160" height="163" alt=""><span>AMANAILS</span></a>
+  <a class="bar-brand" href="#start" aria-label="Amanails, nach oben"><img src="/img/logo-symbol-v2-160.webp" width="160" height="163" alt=""><span>AMANAILS</span></a>
   <nav class="bar-nav" aria-label="Kurznavigation"><a href="#leistungen">Leistungen</a><a href="#arbeiten">Arbeiten</a><a href="#studio">Studio</a></nav>
   <button class="pill pill--line bar-cta" type="button" data-dialog="booking">Termin anfragen</button>
   <button class="menu-toggle bar-menu" type="button" aria-controls="menu" aria-expanded="false"><span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Menü öffnen</span></button>
@@ -44,19 +47,22 @@
   <section id="start" class="hero" aria-labelledby="hero-title">
     <div class="hero-stage">
       <div class="hero-cam" data-cam>
+        <!-- the still = the film's last frame (motion off, no JS, or if the film cannot play) -->
         <picture>
-          <source media="(max-width: 900px)" type="image/avif" srcset="/img/hero-m-v1-560.avif 560w, /img/hero-m-v1-840.avif 840w, /img/hero-m-v1-1122.avif 1122w" sizes="100vw">
-          <source media="(max-width: 900px)" type="image/webp" srcset="/img/hero-m-v1-560.webp 560w, /img/hero-m-v1-840.webp 840w, /img/hero-m-v1-1122.webp 1122w" sizes="100vw">
-          <source type="image/avif" srcset="/img/hero-v1-960.avif 960w, /img/hero-v1-1440.avif 1440w, /img/hero-v1-1672.avif 1672w" sizes="100vw">
-          <img class="plate" src="/img/hero-v1-1440.webp" srcset="/img/hero-v1-960.webp 960w, /img/hero-v1-1440.webp 1440w, /img/hero-v1-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="Ein feiner Pinsel zieht eine Linie über einen glänzenden Nude-Nagel" fetchpriority="high">
+          <source media="(max-width: 900px)" type="image/avif" srcset="/img/hero-m-v2-640.avif 640w, /img/hero-m-v2-960.avif 960w, /img/hero-m-v2-1280.avif 1280w" sizes="125vw">
+          <source media="(max-width: 900px)" type="image/webp" srcset="/img/hero-m-v2-640.webp 640w, /img/hero-m-v2-960.webp 960w, /img/hero-m-v2-1280.webp 1280w" sizes="125vw">
+          <source type="image/avif" srcset="/img/hero-v2-1440.avif 1440w, /img/hero-v2-2160.avif 2160w, /img/hero-v2-2880.avif 2880w" sizes="122vw">
+          <img class="plate" src="/img/hero-v2-2160.webp" srcset="/img/hero-v2-1440.webp 1440w, /img/hero-v2-2160.webp 2160w, /img/hero-v2-2880.webp 2880w" sizes="122vw" width="5041" height="2160" alt="Ein feiner Pinsel löst ein Satinband in Roségold neben einem glänzenden Nude-Nagel" fetchpriority="high">
         </picture>
+        <!-- the gesture: the brush releases the satin ribbon, once, silent (src/main.js picks the file) -->
+        <div class="hero-film" aria-hidden="true"><video muted playsinline disablepictureinpicture preload="none"></video></div>
       </div>
       <div class="hero-shade" aria-hidden="true"></div>
 
       <header class="masthead">
         <!-- TODO(amanails): swap in the vector logo master when the owner sends it (current mark is the kit's raster reconstruction) -->
         <a class="brand" href="#start" aria-label="Amanails, Startseite">
-          <img class="brand-mark" src="/img/logo-symbol-v1-320.webp" width="320" height="326" alt="">
+          <img class="brand-mark" src="/img/logo-symbol-v2-320.webp" width="320" height="326" alt="">
           <span class="brand-word">AMANAILS</span>
         </a>
         <nav class="masthead-nav" aria-label="Hauptnavigation"><a href="#leistungen">Leistungen</a><a href="#arbeiten">Arbeiten</a><a href="#studio">Studio</a></nav>
@@ -72,10 +78,10 @@
       <!-- same plate again, cut to finger + brush, so the title sits behind them -->
       <div class="hero-cam hero-cam--fg" data-cam aria-hidden="true">
         <picture>
-          <source media="(max-width: 900px)" type="image/avif" srcset="/img/hero-m-fg-v1-560.avif 560w, /img/hero-m-fg-v1-840.avif 840w, /img/hero-m-fg-v1-1122.avif 1122w" sizes="100vw">
-          <source media="(max-width: 900px)" type="image/webp" srcset="/img/hero-m-fg-v1-560.webp 560w, /img/hero-m-fg-v1-840.webp 840w, /img/hero-m-fg-v1-1122.webp 1122w" sizes="100vw">
-          <source type="image/avif" srcset="/img/hero-fg-v1-960.avif 960w, /img/hero-fg-v1-1440.avif 1440w, /img/hero-fg-v1-1672.avif 1672w" sizes="100vw">
-          <img class="plate" src="/img/hero-fg-v1-1440.webp" srcset="/img/hero-fg-v1-960.webp 960w, /img/hero-fg-v1-1440.webp 1440w, /img/hero-fg-v1-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="">
+          <source media="(max-width: 900px)" type="image/avif" srcset="/img/hero-m-fg-v2-640.avif 640w, /img/hero-m-fg-v2-960.avif 960w, /img/hero-m-fg-v2-1280.avif 1280w" sizes="125vw">
+          <source media="(max-width: 900px)" type="image/webp" srcset="/img/hero-m-fg-v2-640.webp 640w, /img/hero-m-fg-v2-960.webp 960w, /img/hero-m-fg-v2-1280.webp 1280w" sizes="125vw">
+          <source type="image/avif" srcset="/img/hero-fg-v2-1100.avif 1100w, /img/hero-fg-v2-1672.avif 1672w, /img/hero-fg-v2-2400.avif 2400w" sizes="82vw">
+          <img class="plate" src="/img/hero-fg-v2-1672.webp" srcset="/img/hero-fg-v2-1100.webp 1100w, /img/hero-fg-v2-1672.webp 1672w, /img/hero-fg-v2-2400.webp 2400w" sizes="82vw" width="3405" height="1916" alt="">
         </picture>
       </div>
 
@@ -86,15 +92,21 @@
   <!-- 02 · Von der Idee zum Detail. -->
   <section id="detail" class="scene detail" aria-labelledby="detail-title">
     <div class="scene-media" data-depth="detail">
-      <img class="ambient" src="/img/macro-v1-960.webp" width="960" height="540" alt="" loading="lazy" decoding="async">
+      <picture><source media="(max-width: 900px)" srcset="/img/macro-m-v2-560.webp"><img class="ambient" src="/img/macro-v2-1280.webp" width="1280" height="532" alt="" loading="lazy" decoding="async"></picture>
       <div class="frame frame--detail">
         <picture>
-          <source type="image/avif" srcset="/img/macro-v1-960.avif 960w, /img/macro-v1-1440.avif 1440w, /img/macro-v1-1672.avif 1672w" sizes="100vw">
-          <img src="/img/macro-v1-1440.webp" srcset="/img/macro-v1-960.webp 960w, /img/macro-v1-1440.webp 1440w, /img/macro-v1-1672.webp 1672w" sizes="100vw" width="1672" height="941" alt="Mandelförmige Nude-Nägel mit feinem Schimmer auf roséfarbenem Satin" loading="lazy" decoding="async">
+          <source media="(max-width: 900px)" type="image/avif" srcset="/img/macro-m-v2-560.avif 560w, /img/macro-m-v2-840.avif 840w, /img/macro-m-v2-1122.avif 1122w" sizes="100vw">
+          <source media="(max-width: 900px)" type="image/webp" srcset="/img/macro-m-v2-560.webp 560w, /img/macro-m-v2-840.webp 840w, /img/macro-m-v2-1122.webp 1122w" sizes="100vw">
+          <source type="image/avif" srcset="/img/macro-v2-1280.avif 1280w, /img/macro-v2-1920.avif 1920w, /img/macro-v2-2552.avif 2552w" sizes="125vw">
+          <img src="/img/macro-v2-1920.webp" srcset="/img/macro-v2-1280.webp 1280w, /img/macro-v2-1920.webp 1920w, /img/macro-v2-2552.webp 2552w" sizes="125vw" width="2552" height="1061" alt="Mandelförmige Nude-Nägel mit feinem Schimmer auf roséfarbenem Satin" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>
     <div class="scene-shade" aria-hidden="true"></div>
+    <picture class="satin satin--detail" data-satin aria-hidden="true">
+      <source type="image/avif" srcset="/img/satin-wave-2-v2-1400.avif 1400w, /img/satin-wave-2-v2-2400.avif 2400w" sizes="110vw">
+      <img src="/img/satin-wave-2-v2-1400.webp" srcset="/img/satin-wave-2-v2-1400.webp 1400w, /img/satin-wave-2-v2-2400.webp 2400w" sizes="110vw" width="6336" height="601" alt="" decoding="async" fetchpriority="low">
+    </picture>
     <div class="detail-copy">
       <p class="num" data-reveal><span>02</span></p>
       <span class="rule" data-reveal aria-hidden="true"></span>
@@ -107,11 +119,11 @@
   <!-- TODO(amanails): owner confirms permission to publish the work and studio photos -->
   <section id="arbeiten" class="scene work" aria-labelledby="work-title">
     <div class="scene-media" data-depth="work">
-      <img class="ambient" src="/img/work-v1-640.webp" width="640" height="761" alt="" loading="lazy" decoding="async">
+      <img class="ambient" src="/img/work-v2-640.webp" width="640" height="761" alt="" loading="lazy" decoding="async">
       <div class="frame frame--work">
         <picture>
-          <source type="image/avif" srcset="/img/work-v1-640.avif 640w, /img/work-v1-960.avif 960w, /img/work-v1-1344.avif 1344w" sizes="(max-width: 900px) 135vw, 76vw">
-          <img src="/img/work-v1-960.webp" srcset="/img/work-v1-640.webp 640w, /img/work-v1-960.webp 960w, /img/work-v1-1344.webp 1344w" sizes="(max-width: 900px) 135vw, 76vw" width="1344" height="1598" alt="Lange Mandelnägel in Nude, zwei davon mit Silberglitzer, Arbeit von Amanails" loading="lazy" decoding="async">
+          <source type="image/avif" srcset="/img/work-v2-640.avif 640w, /img/work-v2-960.avif 960w, /img/work-v2-1344.avif 1344w" sizes="(max-width: 900px) 135vw, 76vw">
+          <img src="/img/work-v2-960.webp" srcset="/img/work-v2-640.webp 640w, /img/work-v2-960.webp 960w, /img/work-v2-1344.webp 1344w" sizes="(max-width: 900px) 135vw, 76vw" width="1344" height="1598" alt="Lange Mandelnägel in Nude, zwei davon mit Silberglitzer, Arbeit von Amanails" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>
@@ -129,8 +141,8 @@
     <div class="scene-media scene-media--fg" data-depth="work" aria-hidden="true">
       <div class="frame frame--work">
         <picture>
-          <source type="image/avif" srcset="/img/work-fg-v1-640.avif 640w, /img/work-fg-v1-960.avif 960w, /img/work-fg-v1-1344.avif 1344w" sizes="(max-width: 900px) 135vw, 76vw">
-          <img src="/img/work-fg-v1-960.webp" srcset="/img/work-fg-v1-640.webp 640w, /img/work-fg-v1-960.webp 960w, /img/work-fg-v1-1344.webp 1344w" sizes="(max-width: 900px) 135vw, 76vw" width="1344" height="1598" alt="" loading="lazy" decoding="async">
+          <source type="image/avif" srcset="/img/work-fg-v2-640.avif 640w, /img/work-fg-v2-960.avif 960w, /img/work-fg-v2-1344.avif 1344w" sizes="(max-width: 900px) 135vw, 76vw">
+          <img src="/img/work-fg-v2-960.webp" srcset="/img/work-fg-v2-640.webp 640w, /img/work-fg-v2-960.webp 960w, /img/work-fg-v2-1344.webp 1344w" sizes="(max-width: 900px) 135vw, 76vw" width="1344" height="1598" alt="" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>
@@ -138,7 +150,11 @@
 
   <!-- 04 · Für dich. The only solid section (#BFA398). -->
   <section id="leistungen" class="services" aria-labelledby="services-title">
-    <div class="services-mark" aria-hidden="true"><img src="/img/logo-line-v1-1100.webp" srcset="/img/logo-line-v1-700.webp 700w, /img/logo-line-v1-1100.webp 1100w" sizes="(max-width: 900px) 110vw, 50vw" width="1100" height="1121" alt="" loading="lazy" decoding="async"></div>
+    <picture class="satin satin--services" data-satin aria-hidden="true">
+      <source type="image/avif" srcset="/img/satin-wave-v2-1400.avif 1400w, /img/satin-wave-v2-2400.avif 2400w" sizes="110vw">
+      <img src="/img/satin-wave-v2-1400.webp" srcset="/img/satin-wave-v2-1400.webp 1400w, /img/satin-wave-v2-2400.webp 2400w" sizes="110vw" width="6336" height="365" alt="" decoding="async" fetchpriority="low">
+    </picture>
+    <div class="services-mark" aria-hidden="true"><img src="/img/logo-line-v2-1100.webp" srcset="/img/logo-line-v2-700.webp 700w, /img/logo-line-v2-1100.webp 1100w" sizes="(max-width: 900px) 110vw, 50vw" width="1100" height="1121" alt="" loading="lazy" decoding="async"></div>
     <div class="services-copy">
       <p class="num" data-reveal><span>04</span></p>
       <span class="rule" data-reveal aria-hidden="true"></span>
@@ -154,15 +170,19 @@
   <!-- 05 · Dein Moment bei Amanails. Contact and footer on the studio photo. -->
   <section id="studio" class="scene studio" aria-labelledby="studio-title">
     <div class="scene-media" data-depth="studio">
-      <img class="ambient" src="/img/studio-v1-560.webp" width="560" height="677" alt="" loading="lazy" decoding="async">
+      <img class="ambient" src="/img/studio-v2-560.webp" width="560" height="677" alt="" loading="lazy" decoding="async">
       <div class="frame frame--studio">
         <picture>
-          <source type="image/avif" srcset="/img/studio-v1-560.avif 560w, /img/studio-v1-766.avif 766w" sizes="(max-width: 900px) 100vw, 60vw">
-          <img src="/img/studio-v1-766.webp" srcset="/img/studio-v1-560.webp 560w, /img/studio-v1-766.webp 766w" sizes="(max-width: 900px) 100vw, 60vw" width="766" height="926" alt="Das Amanails-Studio in Hamburg mit pinkem Neon-Schriftzug am Empfangstresen" loading="lazy" decoding="async">
+          <source type="image/avif" srcset="/img/studio-v2-560.avif 560w, /img/studio-v2-766.avif 766w" sizes="(max-width: 900px) 100vw, 60vw">
+          <img src="/img/studio-v2-766.webp" srcset="/img/studio-v2-560.webp 560w, /img/studio-v2-766.webp 766w" sizes="(max-width: 900px) 100vw, 60vw" width="766" height="926" alt="Das Amanails-Studio in Hamburg mit pinkem Neon-Schriftzug am Empfangstresen" loading="lazy" decoding="async">
         </picture>
       </div>
     </div>
     <div class="scene-shade" aria-hidden="true"></div>
+    <picture class="satin satin--studio" data-satin aria-hidden="true">
+      <source type="image/avif" srcset="/img/satin-diagonal-v2-1200.avif 1200w, /img/satin-diagonal-v2-2000.avif 2000w" sizes="80vw">
+      <img src="/img/satin-diagonal-v2-1200.webp" srcset="/img/satin-diagonal-v2-1200.webp 1200w, /img/satin-diagonal-v2-2000.webp 2000w" sizes="80vw" width="5487" height="3072" alt="" decoding="async" fetchpriority="low">
+    </picture>
     <p class="num studio-num" data-reveal><span>05</span></p>
     <span class="rule studio-rule" data-reveal aria-hidden="true"></span>
     <div class="studio-copy">
@@ -192,7 +212,7 @@
 
 <nav id="menu" class="menu" aria-label="Menü" hidden>
   <button class="sheet-close menu-close" type="button" aria-label="Menü schließen"></button>
-  <img class="menu-logo" src="/img/logo-symbol-v1-160.webp" width="160" height="163" alt="">
+  <img class="menu-logo" src="/img/logo-symbol-v2-160.webp" width="160" height="163" alt="">
   <a href="#leistungen">Leistungen</a>
   <a href="#arbeiten">Arbeiten</a>
   <a href="#studio">Studio</a>
@@ -214,7 +234,7 @@
 
 <dialog id="booking" class="sheet" aria-labelledby="booking-title">
   <button class="sheet-close" type="button" data-close aria-label="Schließen"></button>
-  <img class="sheet-logo" src="/img/logo-v1-400.webp" width="400" height="400" alt="Amanails" loading="lazy">
+  <img class="sheet-logo" src="/img/logo-v2-400.webp" width="400" height="400" alt="Amanails" loading="lazy">
   <h2 id="booking-title" class="display display--sheet">Was darf es<br><em>für dich sein?</em></h2>
   <p>Schreib uns auf Instagram oder ruf an, um deinen Wunsch-Look und einen passenden Termin abzustimmen.</p>
   <div class="sheet-actions">

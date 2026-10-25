@@ -36,10 +36,14 @@ const sectionTop = (page, sel) => page.evaluate((s) => Math.round(document.query
   check('desktop: services colour #BFA398', (await page.$eval('#leistungen', (x) => getComputedStyle(x).backgroundColor)) === 'rgb(191, 163, 152)');
   check('desktop: no horizontal overflow', await page.evaluate(() => document.documentElement.scrollWidth === innerWidth));
   check('desktop: title visible after intro', await page.$eval('.hero-title .line > span', (x) => getComputedStyle(x).transform === 'none' || getComputedStyle(x).transform === 'matrix(1, 0, 0, 1, 0, 0)'));
-  // photos at the board's scale (rendered px per source px vs the board's, ±15%), and no zoom on top
-  const scales = await page.evaluate(() => Object.fromEntries([['detail', '.frame--detail img', 1672, .861], ['work', '.frame--work img', 1344, .81], ['studio', '.frame--studio img', 766, 1.12]]
-    .map(([k, sel, nat, want]) => [k, +(document.querySelector(sel).getBoundingClientRect().width / nat / want).toFixed(2)])));
-  check('desktop: photos at the board scale (±15%)', Object.values(scales).every((r) => r > .85 && r < 1.15), JSON.stringify(scales));
+  // photos at the board's scale (rendered px per photo px vs board px per photo px, ±5%;
+  // u = board px at the density of a 1024 px board), and no zoom on top
+  const scales = await page.evaluate(() => {
+    const u = Math.min(document.querySelector('main').clientWidth, 1600) / 1024;
+    return Object.fromEntries([['hero', '.hero-cam:not(.hero-cam--fg) picture', 1, 1238], ['macro', '.frame--detail img', 2552, .5], ['work', '.frame--work img', 1344, 575 / 1344], ['studio', '.frame--studio img', 766, 452 / 766]]
+      .map(([k, sel, nat, want]) => [k, +(document.querySelector(sel).getBoundingClientRect().width / nat / u / want).toFixed(2)]));
+  });
+  check('desktop: photos at the board scale (±5%)', Object.values(scales).every((r) => r > .95 && r < 1.05), JSON.stringify(scales));
   let maxScale = 1;
   for (const yy of [0, 300, 600, 1200, 1800, 2400, 3000]) {
     await page.evaluate((v) => scrollTo({ top: v, behavior: 'instant' }), yy);
@@ -50,6 +54,12 @@ const sectionTop = (page, sel) => page.evaluate((s) => Math.round(document.query
   check('desktop: no vector line left on the page', (await page.$$('.stroke, .ribbon, .edge')).length === 0);
   await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
   await page.waitForTimeout(300);
+
+  // the opening film: plays once, silent, and rests on its last frame with the title behind the finger
+  await page.waitForFunction(() => document.documentElement.classList.contains('film-done'), null, { timeout: 12000 }).catch(() => {});
+  const film = await page.evaluate(() => { const v = document.querySelector('.hero-film video'); return { done: document.documentElement.classList.contains('film-done'), t: v.currentTime, muted: v.muted, loop: v.loop, src: v.currentSrc.split('/').pop(), shown: getComputedStyle(v.parentElement).display !== 'none' }; });
+  check('desktop: opening film plays to its last frame (muted, once)', film.done && film.t > 4.9 && film.muted && !film.loop && film.shown && film.src.startsWith('hero-v2-2048'), JSON.stringify(film));
+  check('desktop: finger cut-out stays over the film', await page.evaluate(() => getComputedStyle(document.querySelector('.hero-cam--fg .plate')).opacity === '1'));
 
   // nav anchor
   await page.click('.masthead-nav a[href="#leistungen"]');
@@ -96,8 +106,9 @@ const sectionTop = (page, sel) => page.evaluate((s) => Math.round(document.query
   // every entrance has finished once its scene was on screen
   for (const sel of ['#detail', '#arbeiten', '#leistungen', '#studio']) { await scrollToY(page, await page.evaluate((s) => document.querySelector(s).getBoundingClientRect().top + scrollY, sel), { settle: 400 }); }
   await page.waitForTimeout(1800);
-  const pending = await page.evaluate(() => [...document.querySelectorAll('[data-reveal]')].filter((el) => !el.classList.contains('in')).map((el) => el.className || el.tagName));
-  check('desktop: all entrances completed after a pass', pending.length === 0, pending.join(', '));
+  const pending = await page.evaluate(() => [...document.querySelectorAll('[data-reveal], [data-satin]')].filter((el) => !el.classList.contains('in')).map((el) => el.className || el.tagName));
+  check('desktop: all entrances (and satin ribbons) completed after a pass', pending.length === 0, pending.join(', '));
+  check('desktop: satin ribbons loaded', await page.evaluate(() => [...document.querySelectorAll('.satin img')].every((i) => i.complete && i.naturalWidth > 0)));
 
   // pause button
   await page.click('.motion-toggle');
@@ -121,8 +132,9 @@ for (const vp of [{ width: 390, height: 844 }, { width: 360, height: 740 }]) {
   check(`${tag}: no errors / failed requests`, errors.length === 0 && bad.length === 0, [...errors, ...bad].join(' | '));
   check(`${tag}: no horizontal overflow`, await page.evaluate(() => document.documentElement.scrollWidth === innerWidth));
   check(`${tag}: phone plate in use`, (await page.$eval('.hero-cam .plate', (i) => i.currentSrc)).includes('hero-m-'));
-  const heavy = await page.evaluate(() => performance.getEntriesByType('resource').filter((r) => /hero-v1|hero-fg-v1/.test(r.name)).map((r) => r.name));
-  check(`${tag}: desktop plates not downloaded`, heavy.length === 0, heavy.join(' '));
+  const heavy = await page.evaluate(() => performance.getEntriesByType('resource').filter((r) => /\/(hero|hero-fg|hero-start|macro)-v2-|\/film\/hero-v2/.test(r.name)).map((r) => r.name));
+  check(`${tag}: desktop plates and film not downloaded`, heavy.length === 0, heavy.join(' '));
+  check(`${tag}: phone film in use`, (await page.$eval('.hero-film video', (v) => v.currentSrc)).includes('/film/hero-m-v2-720'));
   await page.tap('.masthead-menu');
   await page.waitForTimeout(300);
   check(`${tag}: menu opens`, await page.$eval('#menu', (m) => !m.hidden));
@@ -143,6 +155,30 @@ for (const vp of [{ width: 390, height: 844 }, { width: 360, height: 740 }]) {
   const { ctx, page } = await open({ width: 1280, height: 800 }, { reducedMotion: 'reduce' });
   check('reduced motion: motion-off, pause button disabled', await page.evaluate(() => document.documentElement.classList.contains('motion-off') && document.querySelector('.motion-toggle').disabled));
   check('reduced motion: every entrance shown at once', await page.evaluate(() => [...document.querySelectorAll('[data-reveal]')].every((el) => getComputedStyle(el).opacity === '1')));
+  check('reduced motion: no film, the still end frame shows', await page.evaluate(() => !document.documentElement.classList.contains('film') && getComputedStyle(document.querySelector('.hero-film')).display === 'none' && getComputedStyle(document.querySelector('.hero-cam .plate')).opacity === '1'));
+  check('reduced motion: film never requested', await page.evaluate(() => !performance.getEntriesByType('resource').some((r) => r.name.includes('/film/'))));
+  await ctx.close();
+}
+
+// ---------- scale: no "super zoom" (the board drawn at the density of a 1024 px board) ----------
+for (const vp of [{ width: 1280, height: 800 }, { width: 1440, height: 900 }, { width: 1920, height: 1080 }]) {
+  const ctx = await browser.newContext({ viewport: vp });
+  const page = await ctx.newPage();
+  await page.goto(BASE + '?static&nosmooth', { waitUntil: 'networkidle' });
+  await page.waitForTimeout(800);
+  const m = await page.evaluate(() => {
+    const vh = innerHeight, top = (s) => document.querySelector(s).getBoundingClientRect().top + scrollY;
+    const step = (a, b) => (top(b) - top(a)) / vh;
+    const fs = (s) => Math.max(...[...document.querySelectorAll(s)].map((e) => parseFloat(getComputedStyle(e).fontSize)));
+    const small = [...document.querySelectorAll('.num, .caps, .masthead-nav a, .work-links, .place, .footer')].map((e) => parseFloat(getComputedStyle(e).fontSize));
+    return { next: top('#detail') / vh, detail: step('#detail', '#arbeiten'), work: step('#arbeiten', '#leistungen'), services: step('#leistungen', '#studio'), studio: document.querySelector('#studio').offsetHeight / vh, titles: fs('.detail-copy .display, .work-copy .display, .display--m') / innerWidth, hero: fs('.hero-title') / innerWidth, smallMin: Math.min(...small) };
+  });
+  const tag = `scale ${vp.width}`;
+  check(`${tag}: next scene starts on the first screen (<= 0.8 vh)`, m.next <= .8, `${m.next.toFixed(2)} vh`);
+  check(`${tag}: scenes 02-04 under 0.8 vh each`, Math.max(m.detail, m.work, m.services) <= .8, [m.detail, m.work, m.services].map((v) => v.toFixed(2)).join('/'));
+  check(`${tag}: studio + footer under 0.95 vh`, m.studio <= .95, m.studio.toFixed(2));
+  check(`${tag}: section titles <= 7.5% of the width, opening title <= 9.5%`, m.titles <= .075 && m.hero <= .095, `${(m.titles * 100).toFixed(1)}% / ${(m.hero * 100).toFixed(1)}%`);
+  check(`${tag}: no text under 11 px`, m.smallMin >= 11, `${m.smallMin}px`);
   await ctx.close();
 }
 

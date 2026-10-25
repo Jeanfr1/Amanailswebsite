@@ -26,12 +26,12 @@ const mark = $('.services-mark');
 const deinWord = $('.dein');
 const scenes = ['detail', 'arbeiten', 'studio'].map((id) => {
   const el = document.getElementById(id);
-  return { el, media: $$('.scene-media', el), top: 0, h: 0 };
+  return { el, media: $$('.scene-media', el), satin: $('.satin', el), top: 0, h: 0 };
 });
-const services = { el: $('#leistungen'), top: 0, h: 0 };
+const services = { el: $('#leistungen'), satin: $('#leistungen .satin'), top: 0, h: 0 };
 
 // ---------- entrances: once, on time, when the element comes into view ----------
-const revealed = [...$$('[data-reveal]'), mark];
+const revealed = [...$$('[data-reveal]'), ...$$('[data-satin]'), mark];
 let io = null;
 function armReveals() {
   io?.disconnect();
@@ -76,16 +76,22 @@ function render(force) {
     set(heroTitle, 'transform', `translate3d(0, ${(-G.vh * .05 * ease(p)).toFixed(1)}px, 0)`);
     set(heroNote, 'opacity', String(1 - range(p, .02, .4)));
   }
-  // 02 / 03 / 05: photos move 1.5% against the scroll, never scale
+  // 02 / 03 / 05: photos move 1.5% against the scroll, never scale; the satin drifts sideways
   for (const s of scenes) {
     if (!visible(s, yy) && !force) continue;
-    const t = `translate3d(0, ${mix(1.5, -1.5, through(s, yy)).toFixed(2)}%, 0)`;
+    const p = through(s, yy);
+    const t = `translate3d(0, ${mix(1.5, -1.5, p).toFixed(2)}%, 0)`;
     s.media.forEach((el) => set(el, 'transform', t));
+    if (s.satin) set(s.satin, 'transform', `translate3d(${mix(-1.5, 1.5, p).toFixed(2)}%, 0, 0)`);
   }
   const W = scenes[1];
   if (visible(W, yy) || force) set(deinWord, 'transform', `translate3d(${mix(.6, -.6, through(W, yy)).toFixed(2)}%, 0, 0)`);
   // 04: the brand mark turns slowly with the page
-  if (visible(services, yy) || force) set(mark, 'transform', `rotate(${mix(2.5, -2.5, through(services, yy)).toFixed(2)}deg)`);
+  if (visible(services, yy) || force) {
+    const p = through(services, yy);
+    set(mark, 'transform', `rotate(${mix(2.5, -2.5, p).toFixed(2)}deg)`);
+    set(services.satin, 'transform', `translate3d(${mix(1.5, -1.5, p).toFixed(2)}%, 0, 0)`);
+  }
 }
 
 function tick() {
@@ -98,10 +104,46 @@ function tick() {
 }
 function schedule() { if (!raf) raf = requestAnimationFrame(tick); }
 
+// ---------- the opening film: the brush releases the satin ribbon, once, silent ----------
+// html.film is set in <head> (motion allowed, no ?static, no data saver). The film's first frame
+// is the poster; its last frame is the still underneath, so a film that cannot play just leaves
+// the still. The title rises once the ribbon is in the air.
+const film = $('.hero-film video');
+function stopFilm() {
+  film.pause();
+  root.classList.remove('film', 'film-wait');
+}
+function startFilm() {
+  if (!root.classList.contains('film')) return;
+  const [name, w] = phoneMQ.matches ? ['hero-m', 720] : ['hero', 2048];
+  film.poster = `/img/${name}-start-v2-${w}.webp`;
+  for (const [ext, type] of [['webm', 'video/webm; codecs="vp9"'], ['mp4', 'video/mp4']]) {
+    const s = document.createElement('source');
+    s.src = `/film/${name}-v2-${w}.${ext}`;
+    s.type = type;
+    film.append(s);
+  }
+  root.classList.add('film-wait');
+  const title = () => root.classList.remove('film-wait');
+  const fail = () => { if (film.currentTime < .1) stopFilm(); else title(); };
+  const guard = setTimeout(() => { if (film.paused) fail(); }, 3500);
+  film.lastElementChild.addEventListener('error', fail);
+  film.addEventListener('timeupdate', function rise() {
+    if (film.currentTime < 1.1) return;
+    title();
+    film.removeEventListener('timeupdate', rise);
+  });
+  film.addEventListener('ended', () => { clearTimeout(guard); root.classList.add('film-done'); title(); }, { once: true });
+  film.preload = 'auto';
+  film.load();
+  film.play()?.catch(fail);
+}
+
 // ---------- motion on/off ----------
 const motionBtn = $('.motion-toggle');
 function applyMotion() {
   paused = reduceMQ.matches || userPaused;
+  if (paused) stopFilm();
   root.classList.toggle('motion-off', paused);
   motionBtn.setAttribute('aria-pressed', String(paused));
   motionBtn.disabled = reduceMQ.matches;
@@ -180,3 +222,4 @@ document.fonts?.ready.then(() => requestAnimationFrame(ready));
 setTimeout(ready, 1800); // never keep the title waiting on a slow font
 addEventListener('load', measure, { once: true });
 applyMotion();
+startFilm();

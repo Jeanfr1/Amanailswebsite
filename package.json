@@ -13,7 +13,9 @@
     "measure": "~/anaconda3/bin/python3 scripts/measure-board.py",
     "qa": "node scripts/qa.mjs",
     "compare": "node scripts/compare.mjs",
-    "check-kit": "~/anaconda3/bin/python3 tools/check_kit.py"
+    "check-kit": "~/anaconda3/bin/python3 tools/check_kit.py",
+    "prepare-higgsfield": "~/anaconda3/bin/python3 scripts/prepare-higgsfield.py",
+    "film": "node scripts/film.mjs"
   },
   "devDependencies": {
     "playwright": "1.49.1",
