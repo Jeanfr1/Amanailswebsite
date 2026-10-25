@@ -75,6 +75,6 @@ print("banner.png", round((OUT / "banner.png").stat().st_size / 1024), "KB")
 frames = sorted((SRC / "frames").glob("f_*.png"))
 subprocess.run([
     "ffmpeg", "-y", "-loglevel", "error", "-framerate", "10", "-i", str(SRC / "frames/f_%04d.png"),
-    "-vf", "fps=7,scale=720:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=96:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle",
+    "-vf", "fps=10,scale=720:-1:flags=lanczos,split[a][b];[a]palettegen=max_colors=80:stats_mode=diff[p];[b][p]paletteuse=dither=bayer:bayer_scale=5:diff_mode=rectangle",
     "-loop", "0", str(OUT / "hero-scroll.gif")], check=True)
 print("hero-scroll.gif", len(frames), "frames", round((OUT / "hero-scroll.gif").stat().st_size / 1024), "KB")
